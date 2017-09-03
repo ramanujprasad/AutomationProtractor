@@ -1,46 +1,24 @@
 {
   "name": "automation-protractor",
-  "version": "1.2.0",
+  "version": "1.0.0",
   "description": "Protractor screenshot and html snapshot utility",
   "main": "index.js",
   "scripts": {
-    "pretest": "npm run update-webdriver",
-    "test-e2e": "node test/test",
-    "lint": "buenos-jscs && buenos-jshint",
-    "update-webdriver": "webdriver-manager update"
+    "test": "protractor test/protractor.conf.js",
+    "install": "node node_modules/protractor/bin/webdriver-manager update"
   },
-  "keywords": [
-    "protractor",
-    "snapshot",
-    "screenshot",
-    "source",
-    "html",
-    "responsive"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ramanujprasad/AutomationProtractor.git"
   },
+  "keywords": [],
   "author": "Ramanuj Prasad <pd.ramanuj@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ramanujprasad/automation-protractor/issues"
+    "url": "https://github.com/ramanujprasad/AutomationProtractor/issues"
   },
-  "homepage": "https://github.com/ramanujprasad/automation-protractor#readme",
+  "homepage": "https://github.com/ramanujprasad/AutomationProtractor",
   "devDependencies": {
-    "buenos-jscs": "^0.3.2",
-    "buenos-jshint": "^0.2.3",
-    "chromedriver": "^2.19.0",
-    "express": "^4.13.3",
-    "protractor": "^3.0.0",
-    "selenium-server-standalone-jar": "^2.45.0",
-    "up-the-tree": "^0.3.2"
-  },
-  "dependencies": {
-    "cheerio": "^0.20.0",
-    "mkdirp": "^0.5.1",
-    "rimraf": "^2.4.3",
-    "sanitize-filename": "^1.4.3",
-    "q": "^1.4.1"
+    "protractor": "^1.1.4"
   }
 }

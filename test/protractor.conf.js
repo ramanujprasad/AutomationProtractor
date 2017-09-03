@@ -1,92 +1,20 @@
-'use strict';
+var config = {
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  specs: [
+    './e2e/**/*.spec.js'
+  ],
+  allScriptsTimeout: 20000,
 
-var $upTheTree = require('up-the-tree');
-var $seleniumJar = require('selenium-server-standalone-jar');
-var $chromeDriver = require('chromedriver');
+  browserName: 'chrome',
+  directConnect: true,
 
-module.exports.config = {
-
-    allScriptsTimeout: 15000,
-    getPageTimeout: 15000,
-
-    capabilities: {
-        browserName: 'chrome',
-        version: 'ANY',
-        platform: 'ANY',
-
-        chromeOptions: {
-            args: ['--test-type']
-        }
-    },
-
-    chromeDriver: $chromeDriver.path,
-
-    baseUrl: 'http://localhost:8010/',
-
-    seleniumServerJar: $seleniumJar.path,
-
-    framework: 'jasmine2',
-
+  baseUrl: 'http://localhost:3333',
+  // Options to be passed to Jasmine-node.
     jasmineNodeOpts: {
-        defaultTimeoutInterval: 15000,
-        isVerbose: true,
-        showColors: true,
-        includeStackTrace: false
-    },
-
-    maxSessions: 1,
-
-    rootElement: '[ng-app]',
-
-    protractorSnapshotOpts: {
-        image: {
-            target: './reports/e2e-snapshot/custom/image',
-            callbacks: [
-                function () {
-                    return 'customImageCallback';
-                }
-            ]
-        },
-        source: {
-            target: './reports/e2e-snapshot/custom/source',
-            callbacks: [
-                function () {
-                    return 'customSourceCallback';
-                }
-            ]
-        },
-        imageCompare: {
-            threshold: 95
-        },
-        defaultResolution: [700, 700],
-        resolutions: [
-            [1366, 768, 'window']
-        ],
-        onInit: function ($protractorSnapshot) {
-
-            $protractorSnapshot.clearTarget('./reports');
-
-        }
-    }
-
+    showColors: true,
+    defaultTimeoutInterval: 100000,
+    isVerbose: true
+   }
 };
 
-module.exports.config.implicitWait = 9000;
-
-
-module.exports.config.onPrepare = function () {
-
-    // start server
-    require($upTheTree() + '/test/test-server');
-
-    var $protractorSnapshot = require('..');
-    $protractorSnapshot.addReporter();
-
-};
-
-module.exports.config.beforeLaunch = function () {
-
-    var $protractorSnapshot = require('..');
-    $protractorSnapshot.clearTarget('./reports');
-
-};
+exports.config = config;
