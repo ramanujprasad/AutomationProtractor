@@ -14,7 +14,14 @@ var config = {
     showColors: true,
     defaultTimeoutInterval: 100000,
     isVerbose: true
-   }
+   },
+   capabilities: {
+    'browserName': 'chrome',
+    'chromeOptions': {
+        // Prevent warning about dev tools, which breaks some tests, in Windows at least.
+        'args': ['--disable-extensions']
+    }
+},
 };
 
 exports.config = config;
