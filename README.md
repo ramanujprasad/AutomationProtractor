@@ -15,5 +15,8 @@ cd AutomationProtractor
 ## install the repo with npm
 npm install
 
+## Run node application
+npm run start
+
 ## run the tests ( this will both run the E2E tests )
 npm run test-e2e
