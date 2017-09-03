@@ -6,7 +6,7 @@ describe('hello-protractor', function () {
   var page = new IndexPage();
 
   beforeEach(function() {
-      page.get();
+      page.get('/');
   });
 
   afterEach(function () {
@@ -15,7 +15,8 @@ describe('hello-protractor', function () {
 
   describe('index', function () {
     it('should display the correct title', function () {
-      expect(page.getTitle()).toBe('hello protractor');
+            
+      expect(page.getTitle()).toBe('Hello protractor');
     });
 
     it('should display the message when button clicked', function () {

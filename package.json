@@ -2,8 +2,9 @@
   "name": "automation-protractor",
   "version": "1.0.0",
   "description": "Protractor screenshot and html snapshot utility",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "protractor test/protractor.conf.js",
     "install": "node node_modules/protractor/bin/webdriver-manager update"
   },
@@ -19,6 +20,10 @@
   },
   "homepage": "https://github.com/ramanujprasad/AutomationProtractor",
   "devDependencies": {
-    "protractor": "^1.1.4"
+    "protractor": "^5.1.2",
+    "buenos-https": "^0.3.1",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
   }
 }

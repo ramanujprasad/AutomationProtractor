@@ -3,6 +3,7 @@ function IndexPage() {
   this.message = element(by.binding('messageText'));
 
   this.get = function () {
+    browser.ignoreSynchronization = true
     browser.get('/#');
   };
 

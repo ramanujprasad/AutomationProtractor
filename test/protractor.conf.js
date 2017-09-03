@@ -4,11 +4,12 @@ var config = {
     './e2e/**/*.spec.js'
   ],
   allScriptsTimeout: 20000,
+  framework: 'jasmine2',
 
   browserName: 'chrome',
   directConnect: true,
 
-  baseUrl: 'http://localhost:3333',
+  baseUrl: 'http://localhost:3000',
   // Options to be passed to Jasmine-node.
     jasmineNodeOpts: {
     showColors: true,

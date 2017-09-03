@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html ng-app="hello-protractor">
+<html ng-app="protractor">
 <head>
-	<title>hello protractor</title>
+	<title>Hello protractor</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
-	<script src="src/app.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script>
+		angular.module('protractor', []).controller('AppCtrl', function ($scope) {
+			$scope.updateMessageText = function (text) {
+				$scope.messageText = text;
+			};
+		});
+	</script>
 </head>
 <body ng-controller="AppCtrl">
 <div class="container">
 	<div class="row text-center">
-		<img src="src/images/man.png" alt="man logo"/>
+		<img style="width:200px;" src="http://www.protractortest.org/img/protractor-logo-450.png" alt="protractor logo"/>
 
 		<h1>Hello Protractor</h1>
 	</div>
